@@ -25,7 +25,8 @@
 (def pretty-print-fns-map
   {"clojure.core/prn" prn
    "clojure.pprint/pprint" pprint
-   "cider.nrepl.pprint/pprint" pprint})
+   "cider.nrepl.pprint/pprint" pprint
+   "conjure.internal/pprint" pprint})
 
 (defn- to-char-array
   ^chars
