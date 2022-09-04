@@ -64,7 +64,7 @@
 (defn format-value [nrepl-pprint debug v msg]
   (if nrepl-pprint
     (if-let [pprint-fn (get pretty-print-fns-map nrepl-pprint)]
-      (let [{:strs [right-margin length level]} (get msg :nrepl.middleware.print/options)]
+      (let [{:strs [right-margin length level] :or {right-margin 72}} (get msg :nrepl.middleware.print/options)]
         (binding [*print-length* length
                   *print-level* level
                   clojure.pprint/*print-right-margin* right-margin]
